@@ -1,0 +1,22 @@
+GET http://localhost:8082/api/v1/products
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+
+###
+GET http://localhost:8082/api/v1/products/3
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+
+###
+POST http://localhost:8082/api/v1/products
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "category": "GAME",
+  "name": "God Of War",
+  "description": "A super game of the 2022 year!"
+}

@@ -1,0 +1,8 @@
+application:
+  name: "products-go"
+
+datasource:
+  dsn: ${APP_DSN}
+
+server:
+  port: 8082

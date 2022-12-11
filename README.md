@@ -18,6 +18,10 @@ Application in GO uses:
 
 The purpose of this project is: Compare performance between compiled Java and GO web applications
 
+## Disclaimer
+Please, keep in mind, there are no production ready services <br>
+They are only for testing and nothing more
+
 ## Main parts
 Application stuff is pretty easy: There are 3 REST API endpoints to "manage" products in a database
 
@@ -53,11 +57,19 @@ Cache-Control: no-cache
 
 ## Environment variables
 
+### Java:
+
 | Variable        | Description                     | Example                                  |
 |-----------------|---------------------------------|------------------------------------------|
 | APP_DB_URL      | URL to Postgresql database      | postgresql://172.30.4.2/app?charset=utf8 |
 | APP_DB_USERNAME | Username to Postgresql database | dbuser                                   |
 | APP_DB_PASSWORD | Password to Postgresql database | dbuser                                   |
+
+### GO:
+
+| Variable | Description                           | Example                                                   |
+|----------|---------------------------------------|-----------------------------------------------------------|
+| APP_DSN  | Information about database connection | postgresql://dbuser:dbuser@172.30.4.2/app?sslmode=disable |
 
 ## If you want to run
 ### Java:
@@ -102,3 +114,25 @@ export APP_DB_PASSWORD=your_value
 ```
 
 ![Products Spring Boot Compiled](images/products_spring_boot_3_compiled_running.png)
+
+### GO:
+1. Build application:
+
+```
+cd products-go
+go build -o build/products-go cmd/app/main.go
+```
+
+2.  Export all required ENV variables:
+
+```
+export APP_DSN=your_value
+```
+
+2. Run application:
+
+```
+./build/products-go
+```
+
+![Products GO Compiled](images/products_go_compiled_running.png)
