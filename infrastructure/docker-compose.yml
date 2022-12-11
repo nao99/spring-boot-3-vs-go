@@ -1,0 +1,31 @@
+version: '3.4'
+
+# ---------------------------------------------------------
+# Network Configuration
+# ---------------------------------------------------------
+networks:
+  main:
+    ipam:
+      config:
+        - subnet: 172.30.4.0/24
+
+# *************************************************************
+# Services Configuration
+# *************************************************************
+services:
+  # ------------------------
+  # App Postgresql DB
+  # ------------------------
+  app_postgresql_db:
+    image: postgres:14.1
+    restart: on-failure
+    networks:
+      main:
+        ipv4_address: 172.30.4.2
+    volumes:
+      - ${LOGS_DIR}/psql/app:/var/log/postgresql
+      - ${VOLUMES_DIR}/psql/app:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${APP_DB_NAME}
+      POSTGRES_USER: ${APP_DB_USERNAME}
+      POSTGRES_PASSWORD: ${APP_DB_PASSWORD}

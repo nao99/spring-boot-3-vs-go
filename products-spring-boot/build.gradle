@@ -1,0 +1,21 @@
+plugins {
+    id "application"
+    id "org.graalvm.buildtools.native"
+    id "org.springframework.boot"
+}
+
+application {
+    mainClass = 'org.ndbs.spring.graalvm.product.Application'
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-data-jdbc"
+
+    implementation "org.flywaydb:flyway-core"
+    implementation "org.postgresql:postgresql"
+}
+
+test {
+    useJUnitPlatform()
+}
