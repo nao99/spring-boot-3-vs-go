@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"github.com/nao99/spring-boot-3-vs-go/products-go/internal/api"
 	"github.com/nao99/spring-boot-3-vs-go/products-go/internal/config"
 	"github.com/nao99/spring-boot-3-vs-go/products-go/internal/domain"
@@ -16,6 +17,7 @@ import (
 func Run() {
 	cfg, err := config.Init()
 	if err != nil {
+		fmt.Println(err.Error())
 		os.Exit(1)
 	}
 
@@ -32,6 +34,7 @@ func Run() {
 	go func() {
 		err = srv.Run(&cfg.Server)
 		if err != nil {
+			fmt.Println(err.Error())
 			os.Exit(1)
 		}
 	}()
@@ -43,6 +46,7 @@ func Run() {
 
 	err = srv.Stop()
 	if err != nil {
+		fmt.Println(err.Error())
 		os.Exit(1)
 	}
 }

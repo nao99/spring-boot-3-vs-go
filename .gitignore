@@ -5,6 +5,8 @@
 
 infrastructure/.env
 
+build
+
 */.gradle
 */build
 */bin
