@@ -64,12 +64,14 @@ Cache-Control: no-cache
 | APP_DB_URL      | URL to Postgresql database      | postgresql://172.30.4.2/app?charset=utf8 |
 | APP_DB_USERNAME | Username to Postgresql database | dbuser                                   |
 | APP_DB_PASSWORD | Password to Postgresql database | dbuser                                   |
+| APP_PORT        | Application's port              | 8081                                     |
 
 ### GO:
 
 | Variable | Description                           | Example                                                   |
 |----------|---------------------------------------|-----------------------------------------------------------|
 | APP_DSN  | Information about database connection | postgresql://dbuser:dbuser@172.30.4.2/app?sslmode=disable |
+| APP_PORT | Application's port                    | 8081                                                      |
 
 ## If you want to run
 ### Java:
