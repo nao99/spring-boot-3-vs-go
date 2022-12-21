@@ -105,6 +105,7 @@ upx products-spring-boot/build/native/nativeCompile/products-spring-boot
 export APP_DB_URL=your_value
 export APP_DB_PASSWORD=your_value
 export APP_DB_PASSWORD=your_value
+export APP_PORT=your_value
 ```
 
 6. Run application:
@@ -127,6 +128,7 @@ go build -o build/products-go cmd/app/main.go
 
 ```
 export APP_DSN=your_value
+export APP_PORT=your_value
 ```
 
 2. Run application:

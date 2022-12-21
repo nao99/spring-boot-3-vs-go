@@ -5,4 +5,4 @@ datasource:
   dsn: ${APP_DSN}
 
 server:
-  port: 8082
+  port: ${APP_PORT}
